@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Ethereal Archive | 23rd Birthday</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#f1d6ff",
+                        "on-primary-fixed-variant": "#6b3741",
+                        "surface-variant": "#e7e1e2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6b5779",
+                        "secondary-fixed-dim": "#d7bde5",
+                        "surface-container-low": "#f8f2f3",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e7e1e2",
+                        "outline-variant": "#d6c2c3",
+                        "on-tertiary-fixed-variant": "#633e22",
+                        "surface": "#fef8f9",
+                        "on-tertiary-fixed": "#301400",
+                        "on-tertiary-container": "#724b2e",
+                        "on-surface": "#1d1b1c",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#360c17",
+                        "primary-fixed": "#ffd9de",
+                        "primary": "#874e58",
+                        "primary-container": "#ffb6c1",
+                        "on-surface-variant": "#514345",
+                        "surface-tint": "#874e58",
+                        "secondary-fixed": "#f3daff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#251432",
+                        "tertiary-fixed-dim": "#f1bb96",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#533f60",
+                        "on-primary-container": "#7b444e",
+                        "inverse-surface": "#323031",
+                        "tertiary-container": "#f4be99",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f5eff0",
+                        "primary-fixed-dim": "#fcb3be",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-background": "#1d1b1c",
+                        "surface-bright": "#fef8f9",
+                        "surface-dim": "#ded9da",
+                        "on-secondary-container": "#705b7d",
+                        "inverse-primary": "#fcb3be",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fef8f9",
+                        "surface-container": "#f2eced",
+                        "outline": "#847375",
+                        "surface-container-high": "#ece7e8",
+                        "tertiary": "#7e5537"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    font-family: "Plus Jakarta Sans", sans-serif
+    }
+h1, h2, h3, .font-serif {
+    font-family: "Noto Serif", serif
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCpL3XJ370RmoUO3-C6xFnyyfiKAKYEIC_aOLzLj9gG5I17ACgqdXcI3L5WA6q4BM7mwZ0JUh1F9-Kx6Nm2H_jRJNG-kk9P7WaQbZHRfxdxG5_Wm7-W4DFI8zbDwN6BodBt9V57CADzQF2G1f6Z-n8wlDtlruguJ2T8Z2gI0ytmEEHPeJ74uwzlNy7nf_RLpxGrzWD3qITU-20-LIfY3E2XxP-Mk6oG12VOJhtbjarqqGHL7G19ZVpC1Yb53SvF5K_OO1Zz8duKMJKI);
+    opacity: 0.04;
+    pointer-events: none
+    }
+.mesh-bg {
+    background: radial-gradient(at 0% 0%, #ffb6c1 0, transparent 50%), radial-gradient(at 100% 0%, #f1d6ff 0, transparent 50%), radial-gradient(at 100% 100%, #f4be99 0, transparent 50%), radial-gradient(at 0% 100%, #ffb6c1 0, transparent 50%)
+    }
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 0.5px solid rgba(214, 194, 195, 0.25)
+    }
+.flame {
+    animation: flameFlicker 0.6s ease-in-out infinite;
+    transform-origin: center;
+    }
+@keyframes flameFlicker {
+    0%, 100% {
+      transform: scaleY(1) translateY(0);
+    }
+    25% {
+      transform: scaleY(0.95) skewX(-1deg) translateY(-1px);
+    }
+    50% {
+      transform: scaleY(1.1) skewX(1deg) translateY(1px);
+    }
+    75% {
+      transform: scaleY(0.98) skewX(-0.5deg) translateY(-0.5px);
+    }
+    }
+@keyframes smokeRise {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-60px);
+    }
+    }</style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Grainy Texture Overlay -->
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Mesh Background -->
+<div class="fixed inset-0 mesh-bg opacity-30 z-[-1]"></div>
+<!-- Top Navigation (Shared Component) -->
+<nav class="sticky top-6 mx-auto w-[90%] rounded-full border border-white/20 bg-white/10 dark:bg-black/10 backdrop-blur-3xl shadow-[0_8px_32px_0_rgba(255,182,193,0.1)] flex justify-between items-center px-8 py-4 max-w-6xl mx-auto z-50">
+<div class="text-2xl font-serif italic text-rose-800 dark:text-rose-100">The Ethereal Archive</div>
+<div class="hidden md:flex items-center gap-8 font-serif text-lg tracking-tight text-rose-800/70 dark:text-rose-200/70">
+<a class="text-rose-900 dark:text-rose-100 font-semibold border-b border-rose-400/50 hover:bg-white/20 transition-all duration-500 ease-out" href="#entry">Our Story</a>
+<a class="hover:bg-white/20 transition-all duration-500 ease-out" href="#timeline">Gallery</a>
+<a class="hover:bg-white/20 transition-all duration-500 ease-out" href="#messages">Memories</a>
+<a class="hover:bg-white/20 transition-all duration-500 ease-out" href="#footer">Messages</a>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-rose-900 dark:text-rose-200 cursor-pointer hover:opacity-70 transition-opacity" id="musicToggle" title="Click to mute/unmute">music_note</span>
+</div>
+</nav>
+<!-- Background audio player -->
+<audio id="bgMusic" loop>
+<source src="song.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<!-- 1. ENTRY SCREEN -->
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden px-6" id="entry">
+<div class="glass-card p-12 md:p-24 rounded-xl text-center max-w-2xl w-full z-10 scale-95 transition-transform duration-700 hover:scale-100">
+<h1 class="text-display-lg text-4xl md:text-6xl font-serif text-on-surface mb-6 leading-tight">For Someone Very Special ❤️</h1>
+<p class="text-body-lg text-on-surface-variant mb-12 tracking-wide font-light">Tap to begin the journey of your 23rd year.</p>
+<a class="inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-semibold text-lg shadow-lg hover:shadow-primary/20 transition-all duration-300 transform active:scale-95" href="#hero">
+                Enter the Archive
+            </a>
+</div>
+<!-- Decorative elements -->
+<div class="absolute top-1/4 left-10 w-64 h-64 bg-primary-container/20 rounded-full blur-[100px] animate-pulse"></div>
+<div class="absolute bottom-1/4 right-10 w-96 h-96 bg-secondary-container/20 rounded-full blur-[120px] animate-pulse delay-700"></div>
+</section>
+<!-- 2. HERO SECTION -->
+<section class="min-h-screen flex flex-col items-center justify-center relative px-6 text-center" id="hero">
+<div class="space-y-4 max-w-4xl">
+<span class="text-primary font-body uppercase tracking-[0.3em] text-sm font-semibold block mb-4">Celebration of a Lifetime</span>
+<h2 class="text-5xl md:text-8xl font-serif text-on-surface leading-none mb-8">Happy 23rd Birthday <span class="italic text-primary">Babie</span> ❤️</h2>
+<p class="text-xl md:text-2xl font-body font-light text-on-surface-variant max-w-10xl mx-auto leading-relaxed">
+                Happy 23rd Birthday, My Love ❤️ </br> </br>
+
+Today isn’t just about the day you were born…
+it’s about the day the world became a little more beautiful.
+
+The day the world got you.
+And the day my life, unknowingly back then, got something it would one day never want to lose.
+
+I don’t just celebrate your birthday because it’s your day,
+I celebrate it because you exist. Because you are here. Because you walked into my life and made it softer, warmer, happier… fuller.
+
+You have this way of being so real, so effortlessly you, that makes everything around you feel alive. Your smile, your little quirks, the way you laugh, the way you care… it all stays with me, even when you’re not around.
+
+If I could give you anything today, it wouldn’t just be gifts or words…
+It would be a lifetime of moments where you feel loved, safe, understood, and truly, deeply happy.
+
+And I promise you this ~ </br>
+I’ll keep choosing you. In the small moments, in the big ones, in the messy ones, in the quiet ones. I’ll keep showing up, learning you, loving you better each day. </br> </br>
+
+Happy Birthday, my love. ❤️ </p> </p> </p>  </p> </p> </p>
+				A little digital surprise made just for you, to celebrate every beautiful moment that led to today.
+            </p>
+</div>
+<div class="mt-16 animate-bounce">
+<span class="material-symbols-outlined text-3xl text-primary/40">expand_more</span>
+</div>
+</section>
+<!-- 3. SURPRISE REVEAL SECTION -->
+<section class="py-32 px-6">
+<div class="max-w-md mx-auto glass-card p-8 rounded-xl text-center relative overflow-hidden">
+<h3 class="text-2xl font-serif mb-8 text-on-surface">A Surprise Reveal</h3>
+<div class="relative w-full aspect-square rounded-lg bg-surface-container-high flex items-center justify-center overflow-hidden">
+<!-- Revealed content -->
+<div id="scratchRevealed" class="absolute inset-0 flex flex-col items-center justify-center p-8 bg-tertiary-container/20 transition-all duration-700">
+<span class="material-symbols-outlined text-5xl text-primary mb-4">confirmation_number</span>
+<p class="font-serif text-xl">Weekend Trip to Paris</p>
+<p class="text-sm text-on-surface-variant mt-2 italic">Pack your bags, my darling!</p>
+</div>
+<!-- Hidden reveal message -->
+<div id="specialMessage" class="absolute inset-0 flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary-container to-secondary-container opacity-0 scale-75 transition-all duration-700" style="transform-origin: center;">
+<p class="font-serif text-lg text-on-surface leading-relaxed">Oh, wait… that's for some other day.</p>
+<p class="font-serif text-base text-on-surface mt-4 leading-relaxed">For today you get a lot of gifts</p>
+<p class="font-serif text-base text-on-surface mt-2 leading-relaxed">and <span class="italic text-primary">Me</span> for the full day 💕</p>
+</div>
+<!-- Scratch overlay canvas -->
+<canvas id="scratchCanvas" class="absolute inset-0 w-full h-full rounded-lg cursor-crosshair" style="touch-action: none;"></canvas>
+</div>
+</div>
+</section>
+<!-- 4. BIRTHDAY CAKE & CANDLES -->
+<section class="py-32 bg-surface text-center px-6" id="cakeSection">
+<div class="max-w-xl mx-auto space-y-12">
+<div class="relative inline-block">
+<!-- SVG Cake -->
+<svg class="w-64 h-64 mx-auto" viewbox="0 0 200 200">
+<!-- Plate -->
+<ellipse cx="100" cy="160" fill="#f2eced" rx="80" ry="20"></ellipse>
+<!-- Cake Base -->
+<rect fill="#ffb6c1" height="60" rx="10" width="120" x="40" y="100"></rect>
+<path d="M40 110 Q70 100 100 110 T160 110" fill="none" opacity="0.3" stroke="#874e58" stroke-width="2"></path>
+<!-- Candles with animated flames -->
+<g class="candles">
+<rect fill="#f1d6ff" height="30" rx="2" width="6" x="55" y="70"></rect>
+<g class="flame" id="flame1">
+<ellipse cx="58" cy="63" rx="3.5" ry="6" fill="#f4be99" opacity="0.9"></ellipse>
+<ellipse cx="57.5" cy="60" rx="2.5" ry="4" fill="#facba4" opacity="0.8"></ellipse>
+<ellipse cx="58.5" cy="58" rx="1.5" ry="2.5" fill="#fdd89f" opacity="0.9"></ellipse>
+</g>
+<rect fill="#f1d6ff" height="35" rx="2" width="6" x="75" y="65"></rect>
+<g class="flame" id="flame2">
+<ellipse cx="78" cy="59" rx="3.5" ry="6" fill="#f4be99" opacity="0.9"></ellipse>
+<ellipse cx="77.5" cy="56" rx="2.5" ry="4" fill="#facba4" opacity="0.8"></ellipse>
+<ellipse cx="78.5" cy="54" rx="1.5" ry="2.5" fill="#fdd89f" opacity="0.9"></ellipse>
+</g>
+<rect fill="#f1d6ff" height="40" rx="2" width="6" x="97" y="60"></rect>
+<g class="flame" id="flame3">
+<ellipse cx="100" cy="54" rx="3.5" ry="6" fill="#f4be99" opacity="0.9"></ellipse>
+<ellipse cx="99.5" cy="51" rx="2.5" ry="4" fill="#facba4" opacity="0.8"></ellipse>
+<ellipse cx="100.5" cy="49" rx="1.5" ry="2.5" fill="#fdd89f" opacity="0.9"></ellipse>
+</g>
+<rect fill="#f1d6ff" height="35" rx="2" width="6" x="119" y="65"></rect>
+<g class="flame" id="flame4">
+<ellipse cx="122" cy="59" rx="3.5" ry="6" fill="#f4be99" opacity="0.9"></ellipse>
+<ellipse cx="121.5" cy="56" rx="2.5" ry="4" fill="#facba4" opacity="0.8"></ellipse>
+<ellipse cx="122.5" cy="54" rx="1.5" ry="2.5" fill="#fdd89f" opacity="0.9"></ellipse>
+</g>
+<rect fill="#f1d6ff" height="30" rx="2" width="6" x="139" y="70"></rect>
+<g class="flame" id="flame5">
+<ellipse cx="142" cy="63" rx="3.5" ry="6" fill="#f4be99" opacity="0.9"></ellipse>
+<ellipse cx="141.5" cy="60" rx="2.5" ry="4" fill="#facba4" opacity="0.8"></ellipse>
+<ellipse cx="142.5" cy="58" rx="1.5" ry="2.5" fill="#fdd89f" opacity="0.9"></ellipse>
+</g>
+<rect fill="#f1d6ff" height="15" opacity="0.5" rx="2" width="6" x="97" y="85"></rect>
+</g>
+</svg>
+</div>
+<div class="space-y-6">
+<h3 class="text-3xl font-serif text-on-surface">Make a wish and blow 💨</h3>
+<p class="text-on-surface-variant max-w-sm mx-auto font-light leading-relaxed">
+                    Lean close to your screen, close your eyes, and think of your biggest dream for 23.
+                </p>
+<p id="blowStatus" class="text-sm text-primary font-medium mt-4 min-h-6">🎤 Getting ready...</p>
+<div id="sparkleContainer" class="relative w-32 h-8 mx-auto mt-4"></div>
+
+<!-- Wish made message -->
+<div id="wishMessage" class="opacity-0 transition-opacity duration-700 mt-8">
+<p class="text-2xl font-serif text-primary">✨ Your wish has been made! ✨</p>
+</div>
+
+<!-- Happy 23rd celebration -->
+<div id="happySection" class="opacity-0 transition-all duration-1000 mt-12 space-y-6">
+<div id="smokeContainer" class="relative h-16 flex items-center justify-center"></div>
+<div id="happyMessage" class="space-y-4">
+<p class="text-6xl font-serif font-bold text-on-surface">Happy 23rd!</p>
+<p class="text-2xl text-primary italic">Babie ❤️</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. OUR STORY TIMELINE -->
+<section class="py-32 px-6 max-w-5xl mx-auto space-y-32" id="timeline">
+<div class="text-center mb-24">
+<h2 class="text-4xl md:text-5xl font-serif text-on-surface">The Chapters of Us</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto mt-6"></div>
+</div>
+<!-- Timeline Card 1 -->
+<div class="grid md:grid-cols-2 gap-12 items-center group">
+<div class="rounded-xl overflow-hidden glass-card p-2 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full aspect-[4/5] object-cover rounded-lg" data-alt="a romantic couple sitting on a wooden bench overlooking a misty mountain lake at dawn with soft ethereal lighting" src="m1.gif"/>
+</div>
+<div class="space-y-6 md:pl-12">
+<span class="text-primary font-bold text-lg">2023 • The Beginning</span>
+<h3 class="text-3xl font-serif text-on-surface">Where Our Story First Wrote Itself</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light">
+I still remember the day, the moment I opened the door and saw you. I just froze.
+
+"I remember the confusion too… and that strange feeling of something opening up inside me, something that had been closed for more than four years.
+
+The time we spent—eating together, walking by the beach, just roaming around, it all felt simple, but somehow special.
+
+And yes… how could I ever forget that forehead kiss."
+                </p>
+</div>
+</div>
+<!-- Timeline Card 2 (Asymmetric Flip) -->
+<div class="grid md:grid-cols-2 gap-12 items-center group">
+<div class="md:order-2 rounded-xl overflow-hidden glass-card p-2 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full aspect-[4/5] object-cover rounded-lg" data-alt="close-up of two hands holding vintage film cameras in a field of wild lavender during golden hour" src="m2.png"/>
+</div>
+<div class="md:order-1 space-y-6 md:pr-12 text-right">
+<span class="text-primary font-bold text-lg">2024 • The Adventures</span>
+<h3 class="text-3xl font-serif text-on-surface">Lost in the Right Directions</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light">
+I still remember the moment our paths crossed…
+like the universe quietly deciding,
+"Yes, this is meant to be."
+
+And since then, nothing has ever felt quite the same.
+
+Yes, I'm talking about the day you came to stay here and I extended my stay even though I had to leave for Kolhapur and yes, I did get scolded and the trip postponed, but definitely worth it, because I got you!
+                </p>
+</div>
+</div>
+<!-- Timeline Card 3 -->
+<div class="grid md:grid-cols-2 gap-12 items-center group">
+<div class="rounded-xl overflow-hidden glass-card p-2 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+<img class="w-full aspect-[4/5] object-cover rounded-lg" data-alt="warm candlelit dinner scene with crystal glasses and rose petals on a silk tablecloth with soft bokeh background" src="m3.png"/>
+</div>
+<div class="space-y-6 md:pl-12">
+<span class="text-primary font-bold text-lg">2025 • The Deepening</span>
+<h3 class="text-3xl font-serif text-on-surface">Our Quiet Sanctuary</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light">
+In the noise of the world, we found our own frequency. These are the moments that aren't on social media, but are forever etched in the glass of my heart.
+
+Yes, the first 6 months of our relationship.
+
+In the smallest moments with you,
+I've found the kind of happiness
+people spend their whole lives searching for.
+
+You turned ordinary days into something magical.
+
+<a href="https://hrishikeshdabir03.github.io/6-month-anniversary/" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300 mt-4">Check it out for yourself <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+                </p>
+</div>
+</div>
+
+<!-- Timeline Card 4 -->
+<div class="grid md:grid-cols-2 gap-12 items-center group">
+<div class="md:order-2 rounded-xl overflow-hidden glass-card p-2 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center bg-gradient-to-br from-primary-container to-secondary-container">
+<p class="text-2xl font-serif text-primary text-center italic py-32">(To be taken today)</p>
+</div>
+<div class="md:order-1 space-y-6 md:pr-12 text-right">
+<span class="text-primary font-bold text-lg">2025 - 2026 • The Journey Continues</span>
+<h3 class="text-3xl font-serif text-on-surface">Still Writing Our Story</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light">It's not just the big memories I cherish…it's the quiet ones too, the laughs, the silences, the little things. Somehow, with you, everything matters more. This is what happened in the next 6 months and the days till now.<br><br><a href="https://hrishikeshdabir03.github.io/one-year-anniversary-and-birthday/" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300 mt-4">Check it out for yourself <span class="material-symbols-outlined text-lg">arrow_forward</span></a></p>
+</div>
+</div>
+</section>
+
+<!-- 8. OUR TIME TOGETHER WIDGET -->
+<section class="py-24 bg-surface" id="ourTimeSection">
+<div class="max-w-4xl mx-auto px-6">
+<div class="glass-card rounded-3xl p-12 shadow-2xl text-center">
+<h2 class="text-3xl font-serif mb-2 text-primary">Our Time Together</h2>
+<p class="text-on-surface-variant mb-12 text-lg font-light">Since December 1st, 2024</p>
+<div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+<div class="bg-primary/5 rounded-2xl p-6 backdrop-blur-md">
+<div id="years" class="text-4xl font-serif text-primary mb-2">0</div>
+<div class="text-sm text-on-surface-variant font-semibold uppercase tracking-wide">Years</div>
+</div>
+<div class="bg-primary/5 rounded-2xl p-6 backdrop-blur-md">
+<div id="months" class="text-4xl font-serif text-primary mb-2">0</div>
+<div class="text-sm text-on-surface-variant font-semibold uppercase tracking-wide">Months</div>
+</div>
+<div class="bg-primary/5 rounded-2xl p-6 backdrop-blur-md">
+<div id="days" class="text-4xl font-serif text-primary mb-2">0</div>
+<div class="text-sm text-on-surface-variant font-semibold uppercase tracking-wide">Days</div>
+</div>
+<div class="bg-primary/5 rounded-2xl p-6 backdrop-blur-md">
+<div id="hours" class="text-4xl font-serif text-primary mb-2">0</div>
+<div class="text-sm text-on-surface-variant font-semibold uppercase tracking-wide">Hours</div>
+</div>
+<div class="bg-primary/5 rounded-2xl p-6 backdrop-blur-md">
+<div id="minutes" class="text-4xl font-serif text-primary mb-2">0</div>
+<div class="text-sm text-on-surface-variant font-semibold uppercase tracking-wide">Minutes</div>
+</div>
+<div class="bg-primary/5 rounded-2xl p-6 backdrop-blur-md">
+<div id="seconds" class="text-4xl font-serif text-primary mb-2">0</div>
+<div class="text-sm text-on-surface-variant font-semibold uppercase tracking-wide">Seconds</div>
+</div>
+</div>
+<p class="text-on-surface-variant mt-12 font-light italic">And every moment keeps getting sweeter ❤️</p>
+</div>
+</div>
+</section>
+
+<!-- 7. SECRET MESSAGES -->
+<section class="py-32 bg-surface-container-low/50" id="messages">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-serif mb-4">Whispers for Your Soul</h2>
+<p class="text-on-surface-variant font-light">Click to unveil a piece of my heart reserved for specific moments.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="glass-card p-10 text-center rounded-xl cursor-pointer transition-all duration-500 hover:-translate-y-2 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block">cloud</span>
+<h4 class="text-xl font-serif mb-4">Open when you're sad</h4>
+<div class="hidden group-hover:block transition-all duration-700 opacity-0 group-hover:opacity-100">
+<p class="text-sm font-light text-on-surface-variant leading-relaxed">
+                            "Remember that every storm is temporary, but the way I believe in you is permanent. Look up, my love."
+                        </p>
+</div>
+<div class="group-hover:hidden text-xs text-primary/50 uppercase tracking-widest mt-4">Hover to read</div>
+</div>
+<div class="glass-card p-10 text-center rounded-xl cursor-pointer transition-all duration-500 hover:-translate-y-2 group border-primary/10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<h4 class="text-xl font-serif mb-4">Open when you're lonely</h4>
+<div class="hidden group-hover:block transition-all duration-700 opacity-0 group-hover:opacity-100">
+<p class="text-sm font-light text-on-surface-variant leading-relaxed">
+                            "Even when we are miles apart, our heartbeats are synchronized. Close your eyes and feel me right there."
+                        </p>
+</div>
+<div class="group-hover:hidden text-xs text-primary/50 uppercase tracking-widest mt-4">Hover to read</div>
+</div>
+<div class="glass-card p-10 text-center rounded-xl cursor-pointer transition-all duration-500 hover:-translate-y-2 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block">auto_awesome</span>
+<h4 class="text-xl font-serif mb-4">Open for a smile</h4>
+<div class="hidden group-hover:block transition-all duration-700 opacity-0 group-hover:opacity-100">
+<p class="text-sm font-light text-on-surface-variant leading-relaxed">
+                            "You are the 23rd wonder of the world. Just thinking about your laugh makes my entire day brighter."
+                        </p>
+</div>
+<div class="group-hover:hidden text-xs text-primary/50 uppercase tracking-widest mt-4">Hover to read</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<!-- 9. FINAL SURPRISE -->
+<section class="py-32 px-6">
+<div class="max-w-6xl mx-auto">
+<div class="glass-card p-1 md:p-4 rounded-xl shadow-inner relative group">
+<div class="aspect-video w-full rounded-lg overflow-hidden bg-black relative">
+<video class="w-full h-full object-cover" controls>
+  <source src="mvid.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-serif text-2xl">A Cinematic Love Letter</p>
+<p class="text-sm font-light opacity-80">Our Story in Motion</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center max-w-2xl mx-auto">
+<p class="text-2xl font-serif italic text-primary">"The best is yet to come, and I'm so lucky to have a front-row seat to your beautiful life."</p>
+</div>
+</div>
+</section>
+<!-- 8. FOOTER (Shared Component) -->
+<footer class="full-width py-12 flex flex-col items-center gap-4 w-full bg-transparent" id="footer">
+<div class="text-sm font-serif italic text-rose-700">The Ethereal Archive</div>
+<div class="flex gap-8 text-rose-700/50 font-sans text-xs tracking-widest uppercase">
+<a class="hover:text-rose-900 dark:hover:text-rose-100 transition-colors" href="#">Privacy</a>
+<a class="text-rose-900 underline" href="#">Archive</a>
+<a class="hover:text-rose-900 dark:hover:text-rose-100 transition-colors" href="#">Contact</a>
+</div>
+<div class="text-rose-900/60 dark:text-rose-200/60 font-sans text-xs tracking-widest uppercase mt-4">
+            Built with love for your 23rd • From baby With Love ❤
+        </div>
+</footer>
+<script>
+// Scratch Card Functionality
+function initScratchCard() {
+  const canvas = document.getElementById('scratchCanvas');
+  const ctx = canvas.getContext('2d');
+  let isDrawing = false;
+
+  // Set canvas size to match container
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+    drawScratchOverlay();
+  }
+
+  // Draw the initial scratch overlay
+  function drawScratchOverlay() {
+    ctx.fillStyle = '#d6c2c3';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Add gradient for visual appeal
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#d6c2c3');
+    gradient.addColorStop(1, '#ede9da');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Add text overlay
+    ctx.fillStyle = 'rgba(81, 67, 69, 0.4)';
+    ctx.font = '18px Plus Jakarta Sans';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Scratch to reveal ❤️', canvas.width / 2, canvas.height / 2 - 20);
+    
+    ctx.font = '12px Plus Jakarta Sans';
+    ctx.fillStyle = 'rgba(81, 67, 69, 0.2)';
+    ctx.fillText('(Use mouse or touch)', canvas.width / 2, canvas.height / 2 + 20);
+  }
+
+  // Erase function - remove pixels where user scratches
+  function erase(x, y) {
+    const rect = canvas.getBoundingClientRect();
+    const brushRadius = 25;
+    
+    // Clear circular area
+    ctx.clearRect(x - brushRadius, y - brushRadius, brushRadius * 2, brushRadius * 2);
+    
+    // Check if enough has been scratched (threshold)
+    checkRevealThreshold();
+  }
+
+  // Check if user has scratched enough to fully reveal
+  function checkRevealThreshold() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+    let transparentPixels = 0;
+
+    for (let i = 3; i < data.length; i += 4) {
+      if (data[i] < 128) {
+        transparentPixels++;
+      }
+    }
+
+    const revealPercentage = (transparentPixels / (data.length / 4)) * 100;
+
+    if (revealPercentage > 40) {
+      fullyReveal();
+    }
+  }
+
+  // Fully reveal content when threshold is reached
+  function fullyReveal() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.style.opacity = '0';
+    canvas.style.pointerEvents = 'none';
+    
+    // Add celebration animation
+    canvas.style.transition = 'opacity 0.5s ease-out';
+    
+    // After 5 seconds, show the special message with celebration transition
+    setTimeout(() => {
+      const scratchRevealed = document.getElementById('scratchRevealed');
+      const specialMessage = document.getElementById('specialMessage');
+      
+      // Fade out the old message
+      scratchRevealed.style.opacity = '0';
+      
+      // Show the special message with pop animation
+      specialMessage.style.opacity = '1';
+      specialMessage.style.transform = 'scale(1)';
+    }, 5000);
+  }
+
+  // Mouse events
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    const rect = canvas.getBoundingClientRect();
+    erase(e.clientX - rect.left, e.clientY - rect.top);
+  });
+
+  canvas.addEventListener('mousemove', (e) => {
+    if (!isDrawing) return;
+    const rect = canvas.getBoundingClientRect();
+    erase(e.clientX - rect.left, e.clientY - rect.top);
+  });
+
+  canvas.addEventListener('mouseup', () => {
+    isDrawing = false;
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    isDrawing = false;
+  });
+
+  // Touch events for mobile
+  canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    isDrawing = true;
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    erase(touch.clientX - rect.left, touch.clientY - rect.top);
+  });
+
+  canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if (!isDrawing) return;
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    erase(touch.clientX - rect.left, touch.clientY - rect.top);
+  });
+
+  canvas.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    isDrawing = false;
+  });
+
+  // Initialize
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+}
+
+// Blow Detection Functionality
+function initBlowDetection() {
+  const blowStatus = document.getElementById('blowStatus');
+  const cakeSection = document.getElementById('cakeSection');
+  const cakeCandles = document.querySelectorAll('.candles circle');
+  const flames = document.querySelectorAll('.flame');
+  const wishMessage = document.getElementById('wishMessage');
+  const happySection = document.getElementById('happySection');
+  const smokeContainer = document.getElementById('smokeContainer');
+  let audioContext;
+  let analyser;
+  let dataArray;
+  let isListening = false;
+  let hasBlown = false;
+  let permissionRequested = false; // Prevent duplicate permission requests
+
+  // Use Intersection Observer to start listening when section comes into view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !isListening && !hasBlown && !permissionRequested) {
+        startListening();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(cakeSection);
+
+  async function startListening() {
+    permissionRequested = true; // Set flag immediately to prevent duplicate requests
+    try {
+      // Request microphone access
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioContext.createMediaStreamSource(stream);
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+      source.connect(analyser);
+      
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+      isListening = true;
+      blowStatus.textContent = '🎤 Listening... Blow now! 💨';
+      
+      detectBlow();
+    } catch (err) {
+      blowStatus.textContent = '❌ Microphone access needed. Please allow microphone access.';
+      console.error('Microphone access error:', err);
+      permissionRequested = false; // Reset flag on error so user can try again
+    }
+  }
+
+  function detectBlow() {
+    analyser.getByteFrequencyData(dataArray);
+    
+    // Get average frequency for blow detection
+    let average = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+      average += dataArray[i];
+    }
+    average /= dataArray.length;
+
+    // Check for high-frequency content (blow detection)
+    let highFreqEnergy = 0;
+    for (let i = Math.floor(dataArray.length * 0.3); i < dataArray.length; i++) {
+      highFreqEnergy += dataArray[i];
+    }
+    highFreqEnergy /= (dataArray.length * 0.7);
+
+    // Detect blow: high average volume + high frequency content
+    if (average > 100 && highFreqEnergy > 80) {
+      blowOut();
+      isListening = false;
+    } else if (isListening) {
+      requestAnimationFrame(detectBlow);
+    }
+  }
+
+  function blowOut() {
+    hasBlown = true;
+    
+    // Stop flame animations
+    flames.forEach(flame => {
+      flame.style.animation = 'none';
+      flame.style.opacity = '0';
+    });
+
+    // Animate candles going out
+    cakeCandles.forEach((candle, index) => {
+      setTimeout(() => {
+        candle.style.transition = 'all 0.6s ease-out';
+        candle.style.opacity = '0';
+        candle.style.transform = 'translateY(-20px)';
+        
+        // Create sparkle effect
+        createSparkle(candle, index);
+      }, index * 100);
+    });
+
+    // Show wish message
+    setTimeout(() => {
+      blowStatus.style.display = 'none';
+      wishMessage.style.opacity = '1';
+    }, 800);
+
+    // Create smoke effect and show Happy 23rd
+    setTimeout(() => {
+      createSmokeWithMessage();
+      happySection.style.opacity = '1';
+      
+      // Scroll to happy section smoothly
+      setTimeout(() => {
+        happySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+    }, 1200);
+  }
+
+  function createSparkle(candle, index) {
+    const container = document.getElementById('sparkleContainer');
+    const sparkle = document.createElement('div');
+    sparkle.style.position = 'absolute';
+    sparkle.style.left = (index * 40) + 'px';
+    sparkle.style.top = '0';
+    sparkle.style.fontSize = '24px';
+    sparkle.style.animation = 'sparkleFloat 2s ease-out forwards';
+    sparkle.textContent = '✨';
+    container.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 2000);
+  }
+
+  function createSmokeWithMessage() {
+    smokeContainer.innerHTML = '';
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+        const smoke = document.createElement('div');
+        smoke.style.position = 'absolute';
+        smoke.style.left = (Math.random() * 100) + '%';
+        smoke.style.bottom = '0';
+        smoke.style.width = '40px';
+        smoke.style.height = '40px';
+        smoke.style.backgroundColor = 'rgba(139, 78, 88, 0.3)';
+        smoke.style.borderRadius = '50%';
+        smoke.style.animation = 'smokeRise 3s ease-out forwards';
+        smoke.style.filter = 'blur(8px)';
+        smokeContainer.appendChild(smoke);
+
+        setTimeout(() => smoke.remove(), 3000);
+      }, i * 150);
+    }
+  }
+}
+
+// Add sparkle animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes sparkleFloat {
+    0% {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100px) translateX(${Math.random() * 40 - 20}px);
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// Music toggle functionality
+function initMusicToggle() {
+  const musicToggle = document.getElementById('musicToggle');
+  const bgMusic = document.getElementById('bgMusic');
+  
+  // Show permission hints at the start
+  showPermissionHints();
+  
+  // Try to start playing music on page load
+  const playPromise = bgMusic.play();
+  
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      // Autoplay was prevented, play on first user interaction
+      const playOnInteraction = () => {
+        bgMusic.play().catch(err => console.log('Could not play audio'));
+        // Remove listeners after first interaction
+        document.removeEventListener('click', playOnInteraction);
+        document.removeEventListener('scroll', playOnInteraction);
+        document.removeEventListener('touchstart', playOnInteraction);
+      };
+      
+      document.addEventListener('click', playOnInteraction);
+      document.addEventListener('scroll', playOnInteraction);
+      document.addEventListener('touchstart', playOnInteraction);
+    });
+  }
+  
+  // Toggle mute/unmute on icon click
+  musicToggle.addEventListener('click', function() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicToggle.classList.remove('opacity-40');
+    } else {
+      bgMusic.pause();
+      musicToggle.classList.add('opacity-40');
+    }
+  });
+}
+
+// Permission hints for user
+function showPermissionHints() {
+  // Create permission hint banner
+  const banner = document.createElement('div');
+  banner.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-primary/90 text-white px-6 py-3 rounded-full shadow-lg text-sm font-medium z-50 max-w-md text-center';
+  banner.innerHTML = '🔊 Please allow microphone and microphone for the best experience';
+  document.body.appendChild(banner);
+  
+  // Auto-hide after 5 seconds
+  setTimeout(() => {
+    banner.style.transition = 'opacity 0.5s ease-out';
+    banner.style.opacity = '0';
+    setTimeout(() => banner.remove(), 500);
+  }, 5000);
+}
+
+// Our Time Together Counter
+function initTimeCounter() {
+  const startDate = new Date('2024-12-01T00:00:00').getTime();
+  
+  function updateTime() {
+    const now = new Date().getTime();
+    const diff = now - startDate;
+    
+    // Calculate time units
+    const totalSeconds = Math.floor(diff / 1000);
+    const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours = Math.floor(totalMinutes / 60);
+    const totalDays = Math.floor(totalHours / 24);
+    
+    // More accurate calculation for years and months
+    let startDateObj = new Date('2024-12-01');
+    let nowObj = new Date();
+    
+    let years = nowObj.getFullYear() - startDateObj.getFullYear();
+    let months = nowObj.getMonth() - startDateObj.getMonth();
+    let days = nowObj.getDate() - startDateObj.getDate();
+    
+    if (days < 0) {
+      months--;
+      const prevMonth = new Date(nowObj.getFullYear(), nowObj.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
+    
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    
+    // Calculate remaining time within current day
+    const seconds = totalSeconds % 60;
+    const minutes = totalMinutes % 60;
+    const hours = totalHours % 24;
+    
+    // Update display
+    document.getElementById('years').textContent = years;
+    document.getElementById('months').textContent = months;
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  }
+  
+  // Update immediately
+  updateTime();
+  
+  // Update every second
+  setInterval(updateTime, 1000);
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  initScratchCard();
+  initBlowDetection();
+  initMusicToggle();
+  initTimeCounter();
+});
+</script>
+</body></html>
